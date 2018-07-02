@@ -1,0 +1,267 @@
+.flickity-viewport {
+	width:100%;
+}
+
+.flickity-page-dots {
+	left:0;
+	text-align:left;
+	display:inline-block;
+	float:left;
+	padding:10px 0;
+	li.dot {
+		height:13px;
+		width:13px;
+		margin:0 6px;
+		background:$blue;
+		&.is-selected,
+		&:hover {
+			background:$medium-blue;
+		}
+		&:first-child {
+			margin-left:0;
+		}
+	}
+}
+
+#staff .flickity-prev-next-button {
+	display:inline-block;
+	background:$blue !important;
+	margin-right:5px;
+	bottom:-1.25em;
+	top:auto;
+	transform:none;
+	&.previous {
+		left:0;
+	}
+	&.next {
+		left:50px;
+	}
+	&:active:not([disabled]) {
+		//background:$blue;
+		opacity:1 !important;
+	}
+	&:hover {
+		background:$medium-blue !important;
+		svg {
+			path {
+				fill:$blue;
+			}
+		}
+	}
+	svg {
+		height:17px;
+		font-weight:900;
+		top:31%;
+		path {
+			fill:$light-blue;
+		}
+	}
+}
+
+.flickity-nav-wrapper {
+	display:block;
+	@media #{$tablet-up} {
+		position:absolute;
+	}
+	left:0;
+	margin-top:0;
+	#staff & {
+		margin-top:-15px;
+	}
+}
+
+
+
+/// Lightbox
+
+#page #lightbox {
+	.flickity-prev-next-button {
+		transform:none;
+		@media #{$tablet} {
+			display:none;
+		}
+		position:absolute;
+		z-index:9999;
+		top:0;
+		bottom:0;
+		border-radius:0;
+		height:100%;
+		background-color:transparent !important;
+		min-width:80px;
+		transition:background $base-duration, min-width $base-duration * 2;
+		&:not([disabled]):active,
+		&:not([disabled]):focus {
+			opacity:1;
+		}
+		&:not([disabled]):hover {
+			min-width:100px;
+		}
+		svg {
+			top:50%;
+			z-index:9999;
+			path {
+				fill:white;
+			}
+			height:40px;
+			transform:translateY(-50%);
+		}
+		&.previous {
+			left:0;
+			background-color:transparent !important;
+			@include gradient(#000, right);
+		}
+		&.next {
+			right:0;
+			margin:0;
+			background-color:transparent !important;
+			@include gradient(#000, left);
+		}
+		//transform:translateY(-50%);
+	}
+	.flickity-page-dots {
+		//@media #{$tablet} {
+		li.dot {
+			background:transparent;
+			border:2px solid white;
+			height:18px;
+			width:18px;
+			margin:0 .3em;
+			&.is-selected {
+				background:white;
+				}
+			}
+		//}
+		position:absolute;
+		left:$base-spacing;
+		bottom:$small-spacing / 1.5;
+		z-index:9999;
+	}
+	.lightbox-close {
+		font-weight:600;
+		z-index:9999;
+		position:absolute;
+		right:$base-spacing;
+		color:white;
+		@media #{$tablet-up} {
+			font-size:1.3rem;
+		}
+		top:$base-spacing;
+	}
+	display:none;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	height:100%;
+	width:100%;
+	backgrounD:$blue;
+	z-index:999999;
+	.lightbox-inner {
+		display:flex;
+		align-items:center;
+		position:fixed;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		height:100%;
+		width:100%;
+		@media #{$tablet} {
+		padding:0 20px;
+		}
+	}
+	.lightbox-item {
+		width:100%;
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		@include cover;
+		@media #{$tablet} {
+			margin:0 $base-spacing;
+			height:60vw;
+  	  top: 50%;
+    	transform: translateY(-50%);
+		}
+	}
+}
+
+.lightbox-inner {
+	img + h6 {
+		margin-bottom:.25em !important;
+	}
+	overflow:auto;
+	.staff-content {
+		display:block;
+	}
+}
+
+.gallery-item {
+	a {
+		@extend .thumb;
+		display:block;
+		&:after {
+			transition:transform $base-duration;
+		}
+		transition:opacity $base-duration;
+		&:hover {
+			&:after {
+				transform:scale(1.2);
+			}
+			opacity:.85;
+		}
+	}
+	a {
+		border:none !important;
+	}
+}
+
+.is-scrolling a {
+	pointer-events:none;
+}
+
+#lightbox.staff {
+	background:rgba($blue, .95) !important;
+}
+
+.staff-content {
+	@extend .entry-content;
+}
+
+.flickity-prev-next-button {
+	position:absolute;
+	border:none !important;
+	top:50%;
+	transform:translateY(-50%);
+	svg path {
+		fill:white !important;
+	}
+}
+
+.staff-box {
+	hr {
+		border-color:rgba(255,255,255, .5);
+		margin:1.3em 0;
+	}
+	overflow:auto;
+	margin:auto;
+	max-width:$medium-screen;
+	@media #{$tablet-up} {
+  	padding:5em 0;
+	}
+	padding:2.5em 0;
+	//padding-top:10vh;
+	color:white;
+	.staff-head {
+		img {
+			margin-bottom:20px;
+		}
+	}
+}
+
+.lock {
+	position:relative;
+	overflow:hidden;
+}

@@ -1,0 +1,36 @@
+.page-template-page-columns {
+  #page #primary {
+    width:100%;
+    flex-basis:100%;
+    max-width:100%;
+    @media #{$tablet-up} {
+      padding-right:20px;
+    }
+  }
+  main {
+    a {
+      @extend .content-link;
+    }
+    .column-row {
+      align-items:center;
+      margin-bottom:3em;
+      @media #{$tablet} {
+        margin-bottom:0;
+        div {
+          padding-bottom:0;
+        }
+      &:nth-child(2n) {
+        div:first-child {
+          order:2;
+        }
+        div:last-child {
+            order:1;
+          }
+        }
+      }
+      @include even_columns(2,2,1,1 40px);
+      @include clearfix;
+      clear:both;
+    }
+  }
+}

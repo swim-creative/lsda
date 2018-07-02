@@ -1,0 +1,107 @@
+#banner {
+  .entry-header {
+    .btn {
+      width:auto !important;
+      &:after {
+      content:none;
+      }
+    }
+    .entry-meta a {
+      color:white;
+      &:hover {
+        color:$light-blue;
+      }
+    }
+  }
+  color:white;
+  position:relative;
+  @include overlay(.4);
+  @media #{$tablet-up} {
+    @include overlay(.3);
+    small {
+      font-size:35%;
+      margin-top:15px;
+      display:block;
+      line-height:1.1;
+    }
+  }
+  &:not(.hero) {
+    @include overlay(.45);
+    padding-top:25vh !important;
+    padding-bottom:15vh !important;
+    .banner-bg {
+      background-position:center 25%;
+    }
+  }
+  position:relative;
+  //.container {
+    //@include bg_pattern(left, 'plus');
+  //}
+  .banner-content {
+    h1 {
+      @extend .entry-title;
+    }
+    > *:last-child,
+    > *:only-child {
+      margin-bottom:0;
+    }
+    position:relative;
+    z-index:99;
+    @include headings {
+      line-height:.9;
+    }
+    @include text_shadow;
+    .btn {
+      text-shadow:none;
+    }
+    max-width:$medium-screen + 80px;
+  }
+  background:$dark-blue;
+  &.hero {
+    .banner-content {
+      max-width:$medium-screen - 100px;
+    }
+    padding-top:200px;
+    padding-bottom:100px;
+    @media (max-height:870px) {
+      padding-top:120px !important;
+      padding-bottom:50px !important;
+    }
+    //background-image:url(assets/img/hero.jpg);
+    @include cover;
+    background-position:center top;
+    small {
+      font-size:50%;
+    }
+  }
+  // temp
+//  background-image:url(assets/img/hero.jpg);
+  //@include cover;
+  //background-position:center 40%;
+}
+body:not(.home) .banner-bg {
+  top:-50px;
+}
+.banner-bg {
+  will-change:transform;
+  position:absolute !important;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-image:url(assets/img/default.jpg);
+  @include cover;
+  body:not(.home) & {
+    background-position:center 55%;
+  }
+  body.blog & {
+    background-image:url(assets/img/alt.jpg) !important;
+    background-position:center 80%;
+  }
+  background-position:center top;
+  z-index:9 !important;
+}
+
+footer {
+  //@include bg_pattern(right, 'plus');
+}

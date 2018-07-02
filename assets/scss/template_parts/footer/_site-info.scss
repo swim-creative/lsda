@@ -1,0 +1,20 @@
+.site-info {
+  font-weight:700;
+  @include padding($base-spacing null);
+  clear: both;
+  @media #{$mobile} {
+  span:nth-of-type(2) {
+    display:block;
+    visibility:hidden;
+    }
+  }
+}
+
+.legal {
+  margin-top: $small-spacing;
+ font-weight:700;
+  @media #{$tablet-up} {
+    margin-top: 0;
+    float: right;
+  }
+}

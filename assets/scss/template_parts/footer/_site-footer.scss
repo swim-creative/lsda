@@ -1,0 +1,18 @@
+#page > #colophon {
+  @include pad;
+  //border-top: $base-border;
+  @include font-size(.875);
+  background:$dark-blue;
+  color:white;
+  //back to top link
+  .top-link {
+    @include padding($base-spacing null);
+    float: right;
+  }
+
+}
+
+@import "site-contact";
+@import "site-info";
+@import "site-social";
+@import "site-morefoot";

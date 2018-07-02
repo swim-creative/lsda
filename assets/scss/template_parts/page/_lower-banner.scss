@@ -1,0 +1,22 @@
+#lower-banner {
+  font-size:1.2em;
+  color:white;
+  background-color:$blue;
+  background-image:url('assets/img/lower-banner-bg.jpg');
+  @include cover;
+  //background-attachment:fixed;
+  @include bg_pattern(left, 'plus');
+  .container > div {
+    > * {
+      &:last-child {
+        margin-bottom:0;
+      }
+      margin-bottom:20px;
+    }
+    max-width:$medium-screen - 50px;
+    @media #{$tablet-up} {
+      padding-left:10%;
+      padding-left:5vw;
+    }
+  }
+}

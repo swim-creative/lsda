@@ -1,0 +1,220 @@
+html {
+  font-size: $base-font-size;
+  @media #{$tablet} {
+    font-size:$base-font-size - 1px;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  @include font-size(1);
+  line-height: $base-line-height;
+}
+
+.lead {
+  font-size:1.5rem;
+  font-weight:300;
+  margin:1em 0;
+  //color:lighten($dark-gray, 15%);
+}
+
+hr {
+  clear:both;
+}
+
+.entry-content {
+  li {
+    margin-bottom:.6em;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  line-height: $heading-line-height;
+  @include margin(0 null .5em);
+
+  // Consectutive Headings
+  & + & {
+    margin-top: $small-spacing;
+  }
+
+  // First Child Heading
+  &:first-child:not(.site-title) {
+    margin-top: 0;
+  }
+
+  //Pre & Sub Headings
+  > small {
+    font-size: 50%;
+    display: block;
+    font-weight: 400;
+    margin:.2em 0;
+    color: inherit;//$medium-gray;
+  }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $heading-font-family;
+}
+
+
+
+h1,
+.h1 {
+  font-size: 3rem;
+  @media #{$mobile} {
+    font-size:2.5rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size:2.5rem;
+  @media #{$mobile} {
+    font-size:2rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size:2rem;
+  @media #{$mobile} {
+    font-size:1.6rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size:1.6rem;
+  @media #{$mobile} {
+    font-size:1.3rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size:1.3rem;
+  @media #{$mobile} {
+    font-size:1.15rem;
+  }
+}
+
+h6,
+.h6 {
+  font-size:1.15rem;
+  @media #{$mobile} {
+    font-size:1rem;
+  }
+}
+
+p {
+  margin: 0 0 $small-spacing * 1.35;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing, border-color $base-timing $base-duration;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $accent-color;
+  }
+}
+address,
+dl, dd {
+  margin-bottom:$base-spacing;
+}
+
+// Blockquote
+blockquote {
+  font-style:italic;
+  position: relative;
+  background-color: $light-gray;
+  padding: $base-spacing * 2 $base-spacing;
+  @include margin($small-spacing auto $small-spacing);
+  @include font-size(1.5);
+  font-weight:300;
+
+  @media #{$tablet-up} {
+    padding: $base-spacing * 2;
+  }
+
+  @media #{$desktop} {
+    body:not(.layout-sidebar) {
+    padding: $base-spacing * 3;
+    max-width: none;
+    width: 150%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+      .blog &, //override for blog and archive pages
+      .archive &,
+      .layout-sidebar & {
+        width: 100%;
+        margin-left: 0;
+        transform: none;
+        padding: $base-spacing * 2;
+      }
+    }
+  }
+
+  :before {
+    display: block;
+    position: absolute;
+    top: $small-spacing * .5;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '“';
+    font-family: 'Georgia', serif;
+    @include font-size(3);
+    font-weight: bold;
+    color: $medium-gray;
+
+    @media #{$desktop} {
+      body:not(.layout-sidebar) {
+        top: $small-spacing;
+        @include font-size(3.5);
+          .blog &, //override for blog and archive pages
+          .archive & {
+            top: $small-spacing * .5;
+            left: 50%;
+          }
+      }
+    }
+  }
+
+
+  * {
+    max-width: 600px; //TODO variable-ize this
+    @include margin(null auto);
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing * 1.5 0;
+}
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+}

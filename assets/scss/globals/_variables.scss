@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,700,900');
+
+$raleway: 'Raleway', sans-serif;
+// Breakpoints
+$small-screen:480px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$xlarge-screen: 1200px;
+
+$xs-max: $small-screen - 1;
+$small-max: $medium-screen - 1;
+$medium-max: $large-screen - 1;
+$large-max: $xlarge-screen - 1;
+
+// Typography
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+$base-font-family: $raleway;
+$heading-font-family: $raleway;
+
+// Font Sizes
+$base-font-size: 18px;
+
+// Line height
+$base-line-height: 1.4;
+$heading-line-height: 1;
+
+// Other Sizes
+$base-border-radius: 40px;
+$base-geometric-border-radius: 50px;
+$base-square-border-radius: 0;
+$base-spacing: 25px; //$base-line-height * 1em;
+$small-spacing: 15px;
+$base-z-index: 0;
+
+// Colors
+$blue: #21759b;
+$orange: #d54e21;
+$dark-gray: #5c6d7d;
+$medium-gray: #dee2e9;
+$light-gray: #ececec;
+
+// LSD Colors
+
+$blue:#0054a6;
+$light-blue:#00fff6;
+$dark-blue:#0d212f;
+$medium-blue:#1ab5e1;
+$light-green:#00ff00;
+$green:#00c900;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+$accent-color: $medium-blue;
+
+// Border
+$base-border-color: rgba($dark-gray,.125);
+$base-border: 2px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: .1s;
+$base-timing: ease-out;
+
+//TAILOR OVERRIDES
+
+//Media Queries
+$xs: "(max-width: $xs-max)" !default;
+$mobile: "(max-width: $small-max)" !default;
+$mobile-up: "(min-width:$small-screen)";
+$tablet: "(max-width: $medium-max)" !default;
+$tablet-up: "(min-width: $medium-screen)" !default;
+$desktop: "(max-width: $large-max)" !default;
+$desktop-up: "(min-width: $large-screen)" !default;
+$hd: "(min-width: $xlarge-screen)" !default;
+
+$global-spacing-vertical: $base-spacing !default;
+$global-spacing-horizontal: $base-spacing !default;
+$global-transition-duration: $base-duration !default;
+
+$global-primary-color: #0f95ee !default;
+$global-secondary-color: #a0a5aa !default;
+$global-text-color: #404040 !default;
+
+$global-border-color: $base-border-color !default;
+$global-border-radius: $base-border-radius !default;
+$global-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.05) !default;

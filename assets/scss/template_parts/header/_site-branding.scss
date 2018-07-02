@@ -1,0 +1,40 @@
+.site-title,
+.custom-logo-link {
+  max-width:205px;
+  display: inline-block;
+  @include margin($base-spacing);
+  position:relative;
+  margin-right:0;
+  left:-8px;
+  @media #{$mobile-up} {
+    max-width:280px;
+  }
+  @media #{$tablet-up} {
+    transition:opacity $base-duration;
+    &:hover {
+      opacity:.85;
+    }
+    max-width:395px;
+    @include margin($base-spacing $base-spacing $base-spacing 0);
+    margin-right:0;
+  }
+}
+
+.site-title {
+  //margin-bottom:0;
+  @include font-size(1.5);
+  font-weight: 900;
+}
+
+.site-description {
+  visibility:hidden;
+  color: $medium-gray;
+  @media #{$desktop} {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.custom-logo-link {
+  line-height: 0;
+}

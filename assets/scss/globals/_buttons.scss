@@ -1,0 +1,82 @@
+#{$all-buttons},
+.btn,
+.button { //4 woocommerce
+  appearance: none;
+  background-color: $action-color;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: 1.1rem;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 800;
+  letter-spacing:.02em;
+  line-height: 1;
+  padding: $small-spacing * 1.3 $base-spacing * 2 $small-spacing * 1.3 $base-spacing * 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  position:relative;
+  border-bottom:none;
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+
+
+.ui-rounded & {
+  border-radius: $base-border-radius;
+}
+
+.ui-geometric & {
+  border-radius: $base-geometric-border-radius;
+}
+
+.ui-square & {
+  border-radius: $base-square-border-radius;
+}
+
+}
+
+.chevron {
+  &:after {
+    content:' ›';
+    color:$light-blue;
+    display:block;
+    font-size:1.5em;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-weight:400;
+    right:20px;
+    margin-top:-3px;
+    font-family:$font-stack-system;
+  }
+}
+
+.btn:after,
+button[type=submit]:not(.search-submit):not(.menu-toggle):after {
+  @extend .chevron;
+}
+
+#page .btn {
+  margin:.35em .5em 0 0;
+  @media #{$xs} {
+    width:100%;
+  }
+}
